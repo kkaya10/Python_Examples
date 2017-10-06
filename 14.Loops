@@ -1,0 +1,241 @@
+Döngüler
+
+For Kullanımı ÖRneği;
+-----------------------------------------------------
+tr_harfler = "şçöğüİı"
+
+parola = input("Parolanız: ")
+
+for karakter in parola:
+    if karakter in tr_harfler:
+        print("parolada Türkçe karakter kullanılamaz")
+-------------------------------------------------------        
+        
+        
+        
+        
+ 
+ WHİLE KULLANIMI
+ --------------------------------------------------------------------
+ 
+ while True:
+    parola = input("Bir parola belirleyin: ")
+
+    if not parola:
+        print("parola bölümü boş geçilemez!")
+
+    elif len(parola) > 8 or len(parola) < 3:
+        print("parola 8 karakterden uzun 3 karakterden kısa olmamalı")
+
+    else:
+        print("Yeni parolanız", parola)
+        break
+        
+-------------------------------------------------------------------------        
+       
+       
+       
+       
+       
+       
+        
+ÖRNEK UYGULAMA
+----------------------------------------------------------
+izinli_karakterler = "0123456789+-/*= "
+
+print("""
+Basit bir hesap makinesi uygulaması.
+
+İşleçler:
+
+    +   toplama
+    -   çıkarma
+    *   çarpma
+    /   bölme
+
+Yapmak istediğiniz işlemi yazıp ENTER
+tuşuna basın. (Örneğin 23 ve 46 sayılarını
+çarpmak için 23 * 46 yazdıktan sonra
+ENTER tuşuna basın.)
+""")
+
+while True:
+    veri = input("İşleminiz: ")
+    if veri == "q":
+        print("çıkılıyor...")
+        break
+
+    for s in veri:
+        if s not in izinli_karakterler:
+            print("Neyin peşindesin?!")
+            quit()
+
+    hesap = eval(veri)
+
+    print(hesap)
+------------------------------------------------------------
+
+
+
+
+
+
+
+* Range fonksiyonu ; 
+-----------------------------------------------------------------------
+
+i değişkeni 0 ile 10 arasında ise cıktı olarak ver : 
+
+>>> for i in range(0, 10):
+    print(i)
+    
+    0' yazdırır ama 10 'u yazdırmaz 
+    
+**UYGULAMA İÇERİSİNDE KULLANIMI : 
+
+while True:
+    parola = input("parola belirleyin: ")
+
+    if not parola:
+        print("parola bölümü boş geçilemez!")
+
+    elif len(parola) in range(3, 8): #eğer parolanın uzunluğu 3 ile 8 karakter
+        #aralığında ise...
+        print("Yeni parolanız", parola)
+        break
+
+    else:
+        print("parola 8 karakterden uzun 3 karakterden kısa olmamalı")
+       
+ --------------------------------------------------------------------------------
+ 
+ Range diğer versiyonu : range(ilk_sayı, son_sayı, atlama_değeri)
+ 
+  for i in range(0, 10, 2):
+     print(i)
+     
+     
+*TERS RANGE İŞLEMİ
+
+>>> for i in range(10, 0, -1):
+     print(i)
+     
+     
+*RANGE 'in farklı kullanımları
+
+
+1) >>> print(*range(10))
+
+0 1 2 3 4 5 6 7 8 9
+
+2)>>> print(*range(10), sep=", ")
+
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+ 
+ 
+------------------------------------------------------
+
+PASS
+
+pass kelimesi İngilizcede ‘geçmek, pas geçmek’ gibi anlamlara gelir. 
+Python’daki kullanımı da bu anlama oldukça yakındır.
+Biz bu deyimi Pyhon’da ‘görmezden gel, hiçbir şey yapma’ anlamında kullanacağıZ
+
+ÖRNEK UYGULAMA
+
+while True:
+    sayı = int(input("Bir sayı girin: "))
+
+    if sayı == 0:
+        break
+
+    elif sayı < 0:
+        pass
+
+    else:
+        print(sayı)
+
+Burada eğer kullanıcı 0 sayısını girerse programımız sona ereR.
+Eğer kullanıcı 0‘dan küçük bir sayı girerse, yani kullanıcının girdiği sayı eksi değerli ise,
+pass deyimininin etkisiyle programımız hiçbir şey yapmadan yoluna devam eder.
+Bu koşulların dışındaki durumlarda ise programımız kullanıcının girdiği sayıları ekrana yazdıracaktır
+
+
+-------------------------------------------------
+
+ÖRNEK UYGULAMALAR
+
+
+#İlk metinde bulunup ikinci metinden bulunmayan karakterleri bulan uygulama
+
+ilk_metin = "asdasfddgdhfjfdgdşfkgjdfklgşjdfklgjdfkghdfjghjklsdhajlsdhjkjhkhjjh"
+ikinci_metin = "sdfsuıdoryeuıfsjkdfhdjklghjdfklruseldhfjlkdshfljskeeuf"
+
+
+for s in ilk_metin:
+	if not s in ikinci_metin:
+	     print(s)
+
+
+
+
+#ikinci metinden bulunup ilkinde bulunmayan karakterler için
+
+
+
+for s in ikinci_metin:
+	if not s in ilk_metin:
+		print(s)
+
+
+------------------------------------------------------
+ 
+ 
+ 
+ 
+ 
+ 
+        
+        
+        
+        
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
