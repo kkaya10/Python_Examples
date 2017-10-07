@@ -1,0 +1,131 @@
+print("********** PYTHON Username and Password Checker **********")
+
+special_chars="é!'^+%&/()=?_~:;><*-"
+
+
+name = input("Your name: ")
+surname = input("Your surname: ")
+email = input("Your Email: ")
+birth_date_day = input("Your Birthdate day:")
+birth_date_month=input("Your Birthdate month:")
+birth_date_year=input("Your Birthdate year:")
+	
+	
+
+message_1 = ("""
+
+Attention!!!
+
+Now you are going to specify a username and you should 
+care some rules where are in the following ; 
+
+1-Your username shouldn't be related with your name , surname , bdate and email address.
+2-Your username's long must be between 5 and 10 characters.
+3-Your username must content only numbers and letters.
+
+Plese care the rules...
+
+""")
+
+message_2 = ("""
+
+Attention!!!
+
+Now you are going to specify a password and you should 
+care some rules where are in the following ; 
+
+1-Your password shouldn't be related with your name , surname , bdate.
+2-Your password's long must be between 7 and 15 characters.
+3-Your password must content special characters.
+
+
+Plese care the rules...
+
+""")
+
+print(message_1)
+
+while True:
+
+	durum="true"
+	username = input("Your Username :" )
+	
+
+	
+	if not username: 
+		print("You must write a username")
+	
+	elif not len(username) in range(5,11):
+		print("Please care for length of character")
+
+	else:	
+		for k in special_chars:
+			if k in username:
+				durum="false"
+				print("Please dont use specials characters")
+	
+
+		if name in username or surname in username or birth_date_day in username or birth_date_month in username or 			birth_date_year in username:
+			print("You can not use your name,surname,email adress on your username!!!")
+			durum="false"
+
+
+		if durum!="false":
+			print("***** Your new username is : ***** " , username)
+			print("You are forwarding to page of specify password.........")
+
+
+			
+
+			print(message_2)
+			
+			while True:
+
+				durum2="true"
+				password = input("Your Password :" )
+
+	
+				if not password: 
+					print("You must write a password")
+	
+				elif not len(password) in range(7,15): 
+					print("Please care for length of character")
+
+				elif name in password or surname in password or birth_date_day in password or 						birth_date_month in password or birth_date_year in password :
+						print("You can not use your name,surname,email adress on your password!!!")
+						
+				else:	
+					
+					print("\n\n ***** New password is defined for ", username," *****\n\n ")
+					break
+			break				
+
+
+
+
+
+		
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
