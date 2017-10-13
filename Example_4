@@ -1,0 +1,30 @@
+#Dosya Okuma İşlemi Gerçekleşecek ve aranan kelime'den bu dosya içerisinde varsa kaç 
+#adet olduğu bilgisiyle birlikte kullanıcıya
+#gösterilecek yok ise ilgili uyarı verilecektir.
+
+while True:
+
+ try:
+
+    path=input("Arama yapılacak dosyanın ismini belirtin? TEXT dosyası olmasına dikkat edin!")
+    path_2=path + ".txt"
+    metin = open(path_2)
+    aranacak_metin = input("Belirtilen dosyada aranacak kelimeyi giriniz ?")
+    sayac=0    
+
+    while True:
+     a = metin.readline()
+     if len(a)<2:
+      break
+     elif aranacak_metin in a:	
+      sayac+=1
+    
+    if sayac==0:
+     print("Aranılan metin bu dosyada bulunmamaktadır.")
+    else:
+     print("'{}' metni bu dosyada '{}' adet bulundu".format(aranacak_metin,str(sayac)))	
+    
+ except IOError:
+    print("Bir hata oluştu!")
+ finally:
+    metin.close()
