@@ -1,0 +1,33 @@
+  Karakter Dİzileri ÖZellikleri 
+  
+  * metin[-1] değeri verilen karakter dizisini tersten okur ve ilk okuduğı karakteri verir(yani aslında son karakter)
+  
+  
+  * normal sınırı sayı olan bir for döngüsü için ; range değernin içi sınır sayısıdır.
+  
+  for i in range(7):
+    print(kardiz[i])
+    
+    Örnek : 
+    
+    isim = input("isminiz: ")
+
+for i in range(len(isim)):
+    print("isminizin {}. harfi: {}".format(i+1, isim[i]))
+
+*KARAKTER DİZİLERİNİ DİLİMLEMEK
+
+>>> karakter_dizisi = "istanbul"
+>>> karakter_dizisi[0:3]
+
+'ist'
+
+
+*KARAKTERLERİ TERSTEN YAZDIRMA  : [::-1] yada reversed()
+*KARAKTERLERİ SIRALAMA sorted(karakter_dizisi) = cıktı olarak liste verir
+  Türkçe harflerin sıralaması için;
+  >>> import locale
+  >>> locale.setlocale(locale.LC_ALL, "Turkish_Turkey.1254") #Windows için
+  >>> locale.setlocale(locale.LC_ALL, "tr_TR") #GNU/Linux için
+
+
