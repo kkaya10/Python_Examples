@@ -1,0 +1,53 @@
+
+
+secim = input("""
+
+Yapmak istediğiniz işlem için belirtilen numarayı tuşlayarak giriş yapınız !!!
+
+1 -  Encode Password
+2 -  Decode Password
+3 -  Exit
+
+""")
+
+if secim=="1":
+
+ while True:
+  password_en= input("Encode edilecek parola girişi yapınız: ")
+  passwordPlace = input("Parola Platformu : ")
+  if len(password_en) < 8:
+   print("Parolanız en az 8 karakterden oluşmalıdır")
+  else:
+    newpass=""
+    for p in password_en: 
+      asc_val = ord(p)
+      asc_val = asc_val+2
+      chr_val = chr(asc_val)
+      newpass+=chr_val
+    
+    print(passwordPlace," için kriptolu parolanız: ",newpass)
+    dosya = open("pass.txt", "w")
+    dosya.write("Platform : " + passwordPlace + " /   Parola : " +newpass)
+    dosya.close()
+    break
+ 
+elif secim == "2":
+
+ while True:
+  password_de = input("Decode edilecek parola girişi yapınız: ") 
+
+  if len(password_de) < 8:
+   print("Parolanız en az 8 karakterden oluşmalıdır")
+  else:
+    newpass_de=""
+    for p in password_de: 
+      asc_val = ord(p)
+      asc_val = asc_val-2
+      chr_val = chr(asc_val)
+      newpass_de+=chr_val
+    
+    print("Kriptolu Parolanız: ",newpass_de)
+    break
+
+elif secim=="3":
+ pass
