@@ -31,3 +31,215 @@ for i in range(len(isim)):
   >>> locale.setlocale(locale.LC_ALL, "tr_TR") #GNU/Linux için
 
 
+
+
+Karakter Dizi Metotları
+
+
+ REPLACE() : 
+ 
+>>> kardiz.replace("e", "E")
+'Elma'
+
+>>> kardiz.replace("e", "", 1)
+'mmleket'
+
+
+SPLİT():
+
+>>> kardiz = "İstanbul Büyükşehir Belediyesi"
+>>> kardiz.split()
+['İstanbul', 'Büyükşehir', 'Belediyesi']
+
+-----------------------------------------------------------------------
+
+kardiz = input("Kısaltmasını öğrenmek istediğiniz kurum adını girin: ")
+for i in kardiz.split():
+    print(i[0], end="")
+    
+ ---------------------------------------------------------------------   
+   
+>>> kardiz = "Bolvadin, Kilis, Siverek, İskenderun, İstanbul"
+>>> kardiz = kardiz.split(",")
+>>> print(kardiz)
+
+
+--------------------------------------------------------------------
+
+>>> kardiz = "Ankara Büyükşehir Belediyesi"
+>>> kardiz.split(" ", 1)
+['Ankara', 'Büyükşehir Belediyesi']
+
+
+
+
+
+RSPLİT() : splitin tersine sağda sola okuma yapar
+
+>>> kardiz.rsplit(" ", 1)
+['Ankara Büyükşehir', 'Belediyesi'
+
+-------------------------------------------
+
+
+
+UPPER - LOWER - İSLOWER - İSUPPER
+
+endswith metody :  karakter dizisinin bittiği karakteri kontrol eder
+
+>>> kardiz = "istihza"
+>>> kardiz.endswith("a")
+True
+
+startswith metodu : tam tersi şeklinde çalışır
+
+>>> kardiz = "python"
+>>> kardiz.startswith("p")
+True
+------------------------------------------------------
+for i in d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11:
+    if i.startswith("py"):
+        print(i)
+        
+------------------------------------------------------
+
+CAPİTALİZE : ilk harfi büyütür
+
+>>> a = "python"
+>>> a.capitalize()
+'Python'
+
+
+TİTLE : cümledeki tüm kelimelerin ilk harfini büyütür.
+
+>>> kardiz = "istanbul büyükşehir belediyesi"
+>>> kardiz.title()
+
+'Istanbul Büyükşehir Belediyesi'
+
+
+SWAPCASE : kelimediki büyükleri küçüğe , küçükleri büyüğe çevirir.
+
+
+
+STRİP = kırpma kodudur , paramete verilmezse bazı belli baslı karakterleri kırpar
+
+>>> kardiz = "kazak"
+>>> kardiz.strip("k")
+'aza'
+
+LSTRİP - RSTRİP (left ve right)
+
+
+JOİN ; Bİrleştirme işlemi yapar
+
+>>> kardiz = "Beşiktaş Jimnastik Kulübü"
+>>> bölünmüş = kardiz.split()
+>>> print(bölünmüş)
+
+['Beşiktaş', 'Jimnastik', 'Kulübü']
+
+>>> kardiz = " ".join(bölünmüş)
+>>> print(kardiz)
+
+Beşiktaş Jimnastik Kulübü
+
+
+COUNT : 
+kelime içerisinde kac tane oldugunu verir.Sınırlama yapılabiliryor : 
+15. karakterden sonra kac tane 'a' var yada 15 ile 17nci
+karakterler arasında kac tane var gibi.
+
+kelime = input("Herhangi bir kelime: ")
+
+for harf in kelime:
+    print("{} harfi {} kelimesinde {} kez geçiyor!".format(harf,
+                                                           kelime,
+                                                           kelime.count(harf)))
+                                                           
+                                                           
+                                                           
+İNDEX() : karakterin dizi içereisindeki ilk gectiği yerin index nosunu öğrenmek için kullanılır.
+
+
+RİNDEX() : soldan sağa okuma yapar
+
+
+FİND():         BU metotlar index ve rindex ile aynı mantık ile calısır ama aranan kelime içerisinde bulunamazsa
+RFİND():        -1 sonucu verir . index ve rindex valueerror hatası verir.
+
+
+CENTER(): ortalama yapara yani metinin sağına ve soluna boşluk koyarak ortalama yapar.
+
+>>> kardiz = "elma"
+>>> kardiz.center(10, "-")
+
+'---elma---'
+
+
+RJUST - LJUST () : Sağa yada solama yaslama işlemi yapar.
+
+>>> kardiz = "tel no"
+>>> kardiz.ljust(10, ".")
+'tel no....'
+
+---------------------------------------------------------
+
+>>> for i in "elma", "armut", "patlıcan":
+...     i.ljust(10, ".")
+...
+'elma......'
+'armut.....'
+'patlıcan..'
+
+ZFİLL() : sol tarafa 0 eklenir
+
+>>> a = "12"
+>>> a.zfill(3)
+
+'012'
+
+
+
+PARTİTİON - RPARTİTİON 
+
+>>> a = "istanbul"
+>>> a.partition("an")
+('ist', 'an', 'bul')
+
+--------------------------------
+
+>>> b.rpartition("i")
+('ist', 'i', 'hza')
+
+
+ENCODE():
+
+kodlama yapılabilir.
+
+
+EXPANTABS():
+
+boşluk karakterlerini genişletebiliyoruz.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
