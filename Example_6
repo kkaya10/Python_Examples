@@ -1,0 +1,129 @@
+import math as matematik
+import time as zaman
+
+print("*** Calculator ***")
+
+liste=[]
+
+def toplama(*parametre):
+    toplam=0
+    for i in range(len(liste)):
+        toplam +=int(liste[i])
+    return toplam
+
+def cıkarma(*parametre):
+    ilk=int(liste[0])
+    for i in range(1,len(liste)):
+        ilk -=int(liste[i])
+    return ilk
+
+def carpma(*parametre):
+    toplam=1
+    for i in range(len(liste)):
+        toplam *=int(liste[i])
+    return toplam
+
+def bölme(bölünen,bölen):
+    return bölünen/bölen
+
+
+while True:
+    secim=input("""
+    
+    1-Toplama
+    2-Çıkarma
+    3-Çarpma
+    4-Bölme
+    5-Faktoriyel
+    6-Sin(x)
+    7-Cos(x)
+    8-Karekök
+    9-Üs Al
+    q-Çıkış
+    
+    Seçiminizi Giriniz :
+    
+    """)
+
+
+    if(secim=="1"):
+     while True:
+        x = input("Sayilari giriniz ve İşlemi sonlandırmak için 'A' basınız.")
+        if (x == 'A'):
+            print(toplama(liste))
+            liste=[]
+            break
+        else:
+            liste.append(x)
+
+    if (secim == "2"):
+     while True:
+        x = input("Sayilari giriniz ve İşlemi sonlandırmak için 'A' basınız.")
+        if (x == 'A'):
+            print(cıkarma(liste))
+            liste=[]
+            break
+        else:
+            liste.append(x)
+
+    if (secim == "3"):
+     while True:
+        x = input("Sayilari giriniz ve İşlemi sonlandırmak için 'A' basınız.")
+        if (x == 'A'):
+            print(carpma(liste))
+            liste=[]
+            break
+        else:
+            liste.append(x)
+
+    if(secim == "4"):
+        while True:
+            x = int(input("Bölünen= "))
+            y = int(input("Bölen= "))
+            print(bölme(x,y))
+            break
+
+    if(secim=="5"):
+        x=int(input("Sayı= "))
+        print(matematik.factorial(x))
+
+
+    if(secim=="6"):
+        x=int(input("Sin(x) Sayısını Giriniz = "))
+        print(matematik.sin(x))
+
+
+    if(secim == "7"):
+        x = int(input("Sin(x) Sayısını Giriniz = "))
+        print(matematik.cos(x))
+
+
+    if(secim=="8"):
+        x=int(input("Sayı= "))
+        print(pow(x,0.5))
+
+
+    if (secim == "9"):
+        x = int(input("Taban= "))
+        y = int(input("Üs= "))
+        print(pow(x, y))
+
+
+    if (secim=='q'):
+        print("Çıkış Yapılıyor...")
+        zaman.sleep(2)
+        break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
