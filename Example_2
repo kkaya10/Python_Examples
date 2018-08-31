@@ -1,5 +1,5 @@
 
- 
+""" 
 İSİMLER 1
 Ahmet
 Mehmet
@@ -12,7 +12,9 @@ Mehmet
 Sevgi
 
 Şeklindeki iki dosya için yapılan işlem
+"""
 
+import os
 
 d1 = open("isimler1.txt") # dosyayı açıyoruz
 d1_satırlar = d1.readlines() # satırları okuyoruz
